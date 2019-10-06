@@ -4,5 +4,8 @@
 
 # Gradle output
 .gradle
-build
 gradle.properties
+/build
+/*/build
+
+buildSrc/gradle*

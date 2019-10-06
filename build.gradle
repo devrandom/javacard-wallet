@@ -1,5 +1,6 @@
 import org.gitian.javacard.build.InstallTask
 import org.gitian.javacard.build.PingTask
+import org.gitian.javacard.build.MeasureTask
 
 apply plugin: 'javacard'
 
@@ -58,6 +59,8 @@ tasks.install.dependsOn tasks.convertJavacard
 tasks.uninstall.dependsOn tasks.convertJavacard
 
 task ping(type: PingTask)
+
+task measure(type: MeasureTask)
 
 compileJava {
     sourceCompatibility = 1.6
