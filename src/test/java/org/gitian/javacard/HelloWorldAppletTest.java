@@ -45,7 +45,14 @@ class HelloWorldAppletTest {
     void testPing() {
         CommandAPDU apdu = new CommandAPDU(0x80, 0x00, 0, 0);
         ResponseAPDU result = simulator.transmitCommand(apdu);
-        assertEquals(result.getSW(), 0x9000);
+        assertEquals(0x9000, result.getSW());
         assertArrayEquals(result.getData(), "Hello".getBytes());
+    }
+
+    @Test
+    void testEc() {
+        CommandAPDU apdu = new CommandAPDU(0x80, 0x01, 0, 0);
+        ResponseAPDU result = simulator.transmitCommand(apdu);
+        assertEquals(0x9000, result.getSW());
     }
 }
